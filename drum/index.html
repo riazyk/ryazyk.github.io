@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Drum kit</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div class="keys">
+
+		<div data-key = "65" class="key">
+			<kbd>A</kbd>
+			<span>sound 1</span>
+		</div>
+		<div data-key = "83" class="key">
+			<kbd>S</kbd>
+			<span>sound 2</span>
+		</div>
+		<div data-key = "68" class="key">
+			<kbd>D</kbd>
+			<span>sound 3</span>
+		</div>
+		<div data-key = "70" class="key">
+			<kbd>F</kbd>
+			<span>sound 4</span>
+		</div>
+		<div data-key = "71" class="key">
+			<kbd>G</kbd>
+			<span>sound 5</span>
+		</div>
+		<div data-key = "72" class="key">
+			<kbd>H</kbd>
+			<span>sound 6</span>
+		</div>
+		<div data-key = "74" class="key">
+			<kbd>J</kbd>
+			<span>sound 7</span>
+		</div>
+		<div data-key = "75" class="key">
+			<kbd>K</kbd>
+			<span>sound 8</span>
+		</div>
+		<div data-key = "76" class="key">
+			<kbd>L</kbd>
+			<span>sound 9</span>
+		</div>
+	</div>
+
+	<audio data-key="65" src="sounds/drum1.wav"></audio>
+	<audio data-key="83" src="sounds/drum2.wav"></audio>
+	<audio data-key="68" src="sounds/drum3.wav"></audio>
+	<audio data-key="70" src="sounds/djnosie3.wav"></audio>
+	<audio data-key="71" src="sounds/kick0.wav"></audio>
+	<audio data-key="72" src="sounds/kick3.wav"></audio>
+	<audio data-key="74" src="sounds/kick4.wav"></audio>
+	<audio data-key="75" src="sounds/kick5.wav"></audio>
+	<audio data-key="76" src="sounds/kick6.wav"></audio>
+
+
+
+	<script>
+
+		function playSound(e) {
+			const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+			const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+			if(!audio) return;
+			audio.currentTime = 0;
+			audio.play();
+			key.classList.add('playing');
+		}
+
+		function removeTransition(e) {
+			if (e.propertyName !== 'transform') return;
+			this.classList.remove('playing');
+		}
+
+		const keys = document.querySelectorAll('.key');
+
+		keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+		window.addEventListener('keydown', playSound);
+
+
+	</script>
+</body>
+</html>
