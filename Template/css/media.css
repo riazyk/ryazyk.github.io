@@ -1,0 +1,142 @@
+@media screen and (max-width: 1145px) {
+
+	header .headerTop{
+		padding:  0 2%;
+	}
+
+	form {
+		margin-right: 30px;
+	}
+
+	.content {
+		padding: 0 2%;
+	}
+
+}
+
+@media screen and (max-width: 750px) {
+
+	.headerBottom input[type="search"] {
+		width: 200px;
+	}
+}
+
+@media screen and (max-width: 705px) {
+
+	.headerBottom input[type="search"] {
+		display: none;
+	}
+
+	.fa {
+		display: none;
+	}
+
+	form {
+		display: none;
+	}
+
+	header .headerBottom  {
+		margin-top: 20px;
+	}
+
+	.headerBottom ul {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+	}
+
+	header .headerTop a {
+		clear: right;
+		margin-top: 10px;
+		margin-right: 35px;
+	}
+}
+
+@media screen and (max-width: 602px) {
+
+	.headerTop .span_7 {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	header .headerBottom   {
+		margin-top: 10px;
+	}
+
+	header .headerTop input[type="button"]{
+		margin: 0;
+	}
+
+	header .headerTop {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		-ms-align-items: center;
+		align-items: center;
+		height: 180px;
+	}
+
+	header .headerTop a {
+		margin: 10px 0;
+		padding: 0;
+	}
+
+	header .headerTop, .content {
+		padding:  0 5%;
+	}
+}
+
+
+@media screen and (max-width: 415px) {
+
+	.headerBottom {
+		height: 200px;
+	}
+
+	.headerBottom ul {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		-ms-align-items: center;
+		align-items: center;
+		margin-top: 130px;
+	}
+
+	.headerBottom a {
+		padding: 5px;
+	}
+}
+
+
+@media screen and (max-width: 368px) {
+	header .headerTop {
+		height: 200px;
+	}
+
+	.headerTop .span_7 {
+		width: 110%;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	header .headerTop {
+		height: 200px;
+	}
+
+	header .headerTop .span_7 span{
+		display: block;
+	}
+}
