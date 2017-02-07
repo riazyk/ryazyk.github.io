@@ -1,0 +1,19 @@
+
+@font-face {
+  font-family: 'GillSansMT';
+  src: url('../font/GillSansMT.eot?#iefix') format('embedded-opentype'),  url('../font/GillSansMT.woff') format('woff'), url('../font/GillSansMT.ttf') 
+   format('truetype'), url('../font/GillSansMT.svg#GillSansMT') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'PublicoBanner-Light';
+  src: url('../font/PublicoBanner-Light.eot?#iefix') format('embedded-opentype'),  url('../font/PublicoBanner-Light.otf')  format('opentype'),
+	     url('../font/PublicoBanner-Light.woff') format('woff'), url('../font/PublicoBanner-Light.ttf')  format('truetype'), url('../font/PublicoBanner-Light.svg#PublicoBanner-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
