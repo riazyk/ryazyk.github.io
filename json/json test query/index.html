@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Template</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+	
+	<table id="users">
+		<tr><td>Id</td><td>Имя</td><td>Возраст</td><tr>
+		</table>
+		<script type="text/javascript">
+			$(function(){
+				$.getJSON('users.json', function(data) {
+					for(var i=0;i<data.users.length;i++){
+						$('#users').append('<tr><td>' + data.users[i].id + '</td><td>' + data.users[i].name + 
+							'</td><td>' + data.users[i].age + '</td><tr>');
+					}
+				});
+			});
+		</script>
+
+
+
+
+		<script>
+
+		</script>
+	</body>
+	</html>

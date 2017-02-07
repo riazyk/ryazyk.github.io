@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test task</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap-grid-3.3.1.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	
+	<div class="container">
+
+		<header class="row">
+			<div class="top col-md-12">
+				<div class="row">
+					<div class="topIn col-md-3 col-sm-3"></div>
+					<div class="topIn col-md-9 col-sm-9">
+						<nav>
+							<ul>
+								<li><a href="#" >Horizontal link #1</a></li>
+								<li><a href="#" >Horizontal link #2</a></li>
+								<li><a href="#" >Horizontal link #3</a></li>
+								<li><a href="#" >Horizontal link #4</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<main class="row">
+				<div class="med1 col-md-3 col-sm-3">
+					<a href="#" id="link1">Vertical link #1</a>
+					<a href="#" id="link2" >Vertical link #2 </a>
+					<a href="#" id="link3" >Vertical link #3 </a>
+					<a href="#" id="link4" >Vertical link #4 </a>
+					<a href="#" id="link5" >Vertical link #5 </a>
+				</div>
+				<div class="med2 col-md-9 col-sm-9">
+
+					<div class="container-fluid inner">
+						<div class="row inner1 ">
+							<div class="col-md-12">#sizeDisplay</div>
+							<div class="size">1650x90</div>
+						</div>
+
+						<div class="row inner2 ">
+							<!-- <div class="col-md-12"><iframe src="otherHtml.html" width="820" height="400" align="center"></div> -->
+							<div class="col-md-12" id="content" >
+							</div>
+
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</main>
+			<footer class="row">
+				<div class="foot col-md-12">#footer</div>
+			</footer>
+
+			<script>
+
+				// var request = new XMLHttpRequest();
+				// request.open('GET', 'add.html');
+				// request.onreadystatechange = function() {
+				// 	if (request.readyState == 4) {
+				// 		if (request.status == 200) {
+				// 			currentMenuItem.innerHTML = request.responseText;
+				// 		} else {
+				// 			alert('Сетевая ошибка, код: ' + request.status);
+				// 		}
+				// 	}
+				// };
+				// request.send(null);
+
+				// $(function () {
+				// 	$("#link1").on("click", function () {
+				// 		$("#content").load("otherHtml.html");
+				// 	});
+					// $("#nav_page_b").on("click", function () {
+					// 	$("#main").load("PageB.html");
+					// });
+				// });
+
+
+				$(function(){
+					$('#link1').one('click', function(e){
+						e.preventDefault();
+						$('<iframe />', {
+							src : 'otherHtml.html'
+						}).appendTo('#content');
+					});
+				// });
+
+
+				// $(function(){
+					$('#link2').one('click', function() {
+
+						$('<table></table',{
+							"id": "users"
+						}).appendTo("#content").append('<tr><td>' + 'Name' + '</td><td>' + 'Age' + 
+						'</td><td>' + 'Position' + '</td><td>' + 'Note' + '</td><tr>');	
+
+
+						$.getJSON('people.json', function(data) {
+							for(var i=0;i<data.length;i++){
+								$('#content').append('<tr><td>' + data[i].name + '</td><td>' + data[i].age + 
+									'</td><td>' + data[i].position + '</td><td>' + data[i].note + '</td><tr>');
+							}
+						});
+					});
+				});
+
+
+
+			</script>
+
+
+
+
+
+		</div>
+
+
+	</body>
+	</html>

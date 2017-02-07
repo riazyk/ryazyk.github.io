@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Test task</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap-grid-3.3.1.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	
+	<div class="container">
+
+		<header class="row">
+			<div class="top col-md-12">
+				<div class="row">
+					<div class="topIn col-md-3 col-sm-3 "></div>
+					<div class="topIn col-md-9 col-sm-9 col-xs-12">
+						<nav>
+							<ul>
+								<li><a href="#">Horizontal link #1</a></li>
+								<li><a href="#">Horizontal link #2</a></li>
+								<li><a href="#">Horizontal link #3</a></li>
+								<li><a href="#">Horizontal link #4</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<main class="row" id="mainRow">
+				<div class="med1 col-md-3 col-sm-3 col-xs-3">
+					<div class = "mainWrap">
+						<a href="#" id="link1">Vertical link #1</a>
+						<a href="#" id="link2" >Vertical link #2 </a>
+						<a href="#" id="link3" >Vertical link #3 </a>
+						<a href="#" id="link4" >Vertical link #4 </a>
+						<a href="#" id="link5" >Vertical link #5 </a>
+					</div>
+				</div>
+				<div class="med2 col-md-9 col-sm-9 col-xs-9">
+
+					<div class="container-fluid inner">
+						<div class="row inner1 ">
+							<div class="col-md-12">#sizeDisplay</div>
+							<div class="size">
+								<span id="width"></span><span> x </span><span id="height"></span>
+							</div>
+						</div>
+
+						<div class="row inner2 ">
+							<div class="col-md-12" id="content" >
+								<img class = "target" src="images/target.png" alt="">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit dignissimos, quae iste saepe quaerat nesciunt doloribus at, maiores dolorem, atque aspernatur magnam temporibus quod eligendi consequatur perspiciatis dolore ea similique reiciendis illum. Facilis, maxime blanditiis laboriosam unde in soluta aliquam, labore eligendi ipsum, quisquam consectetur quis, voluptas nihil! Vel, aperiam.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit dignissimos, quae iste saepe quaerat nesciunt doloribus at, maiores dolorem, atque aspernatur magnam temporibus quod eligendi consequatur perspiciatis dolore ea similique reiciendis illum. Facilis, maxime blanditiis laboriosam unde in soluta aliquam, labore eligendi ipsum, quisquam consectetur quis, voluptas nihil! Vel, aperiam.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+
+			<footer class="row">
+				<div class="foot col-md-12">#footer</div>
+			</footer>
+
+			<script>
+
+
+				$(function(){
+
+					$('#link1').on('click', function(e){
+						$('#content').empty();
+						e.preventDefault();
+						$('<iframe />', {
+							src : 'otherHtml.html'
+						}).appendTo('#content');
+					});
+
+					$( window ).resize(function() {
+						$( "#width" ).text( $( window ).width() );
+						$( "#height" ).text( $( window ).height() );
+					});
+
+					$(window).resize();
+
+
+					$('#link2').on('click', function() {
+						$('#content').empty();
+
+
+						$.getJSON('people.json', function(data) {
+							for(var i=0;i<9;i++){
+								var aa = data[i].name.length-3;
+								var cut = data[i].name.slice(0,aa);
+								$('#content').append('<h4>'+'Record #'+[i+1]+'</h4>').append('<p>' + 'An employee '+ data[i].name +' provides great job as '+ data[i].position+'. Even if '+ cut + 'is only '+ data[i].age +'years old, he/she has a lot of experiences. Her supervisor mentioned following note about him/she: '+ data[i].note + '</p>');
+							}
+						});
+					});
+
+					$('#link3').on('click', function() {
+						$('#content').empty();
+
+						$('<table></table',{
+							"id": "users"
+						}).appendTo("#content").append('<tr><th>' + 'Name' + '</th><th>' + 'Age' + 
+						'</th><th>' + 'Position' + '</th><th>' + 'Note' + '</th><tr>');	
+
+						$.getJSON('people.json', function(data) {
+							for(var i=0;i<data.length;i++){
+								$('<tr><td>' + data[i].name + '</td><td>' + data[i].age + 
+									'</td><td>' + data[i].position + '</td><td>' + data[i].note + '</td><tr>').insertAfter($('#users tr:first'));
+							}
+						});
+					});
+
+					$('#link4').on('click', function() {
+						$('#content').empty();
+
+						$('<div>').addClass('slider').appendTo("#content");	
+						$('<div>').addClass('slide-list').appendTo(".slider");	
+						$('<div>').addClass('slide-wrap').appendTo(".slide-list");
+
+
+						$.getJSON('slides.json', function(data) {
+							for(var i=0; i<data.length; i++) {
+								$('<div>').addClass('slide-item').appendTo('.slide-wrap');
+							}
+							$('<img>').addClass('photo').appendTo('.slide-item');
+
+
+							var ff = document.querySelectorAll('.photo');
+							var sll = document.querySelectorAll('.slide-item');
+							for (var i = 0; i < data.length; i++) {
+
+								if(data[i].type === "html") {
+									var elemDiv = document.createElement('div');
+									elemDiv.classList.add('innerText');
+									elemDiv.innerHTML = data[i].content;
+
+									sll[i].appendChild(elemDiv);
+								} else {
+									ff[i].setAttribute('src', data[i].content);
+								}
+							}
+						});
+
+// ===== Slider===== 
+function htmSlider(){
+	var playLink = $('.slide-list');
+	var slideWrap = $('.slide-wrap');
+	var slideWidth = $('.slide-item').outerWidth();
+	var newLeftPos = slideWrap.position().left - slideWidth;
+
+	function autoplay(){
+		slideWrap.animate({left: newLeftPos}, 500, function(){
+			slideWrap
+			.find('.slide-item:first')
+			.appendTo(slideWrap)
+			.parent()
+			.css({'left': 0});
+		});
+	}
+
+	timer = setInterval(autoplay, 3000);
+	playLink.mouseover(function(){
+		clearInterval(timer);
+	});
+	playLink.mouseout(function(){
+		timer = setInterval(autoplay, 3000);
+	});
+};
+htmSlider();
+});
+				});
+			</script>
+		</div>
+	</body>
+	</html>
