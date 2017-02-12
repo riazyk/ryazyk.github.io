@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<meta charset="UTF-8">
+	<title>Task1</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+	
+	<div id="place"></div>
+
+	<script>
+
+		var arr = [
+		{"name":"root",           "parentId":null, "id":100},
+		{"name":"1stlevelChild1", "parentId":100,  "id":201},
+		{"name":"1stlevelChild2", "parentId":100,  "id":202},
+		{"name":"2ndlevelChild1", "parentId":201,  "id":301},
+		{"name":"2ndlevelChild2", "parentId":201,  "id":301}
+		];
+
+		var arrayTree = [];
+		var reduce = arr.reduce(function(a, b) {
+			a[b.id] = b;
+			return a;
+		}, {});
+
+
+		arr.forEach(function(item) {
+			var par = reduce[item.parentId];
+			if (par) {
+				(par.childs || (par.childs = [])).push(item);
+			} else {
+				arrayTree.push(item);
+			}
+		});
+		d3.select('#place').append('pre').text(JSON.stringify(arrayTree, null, '  '));
+
+
+	</script>
+</body>
+</html>
