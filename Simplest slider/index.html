@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Template</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+
+
+	<div class="slider">
+		<div class="slide-list">
+			<div class="arrLeft arr"><a href="#"><</a></div>
+			<div class="slide-wrap">
+				<div class="slide-item"><img src="images/img1.png" alt=""></div>
+				<div class="slide-item"><img src="images/img2.png" alt=""></div>
+				<div class="slide-item"><img src="images/img3.png" alt=""></div>
+			</div>
+			<div class="arrRight arr"><a href="#">></a></div>
+		</div>
+	</div>
+
+	<script>
+
+		/* ----- Slider ----- */
+
+		$(function(){
+			var playLink = $('.arr a');
+			var playLeft = $('.arrLeft');
+			var playRight = $('.arrRight');
+			var slideWrap = $('.slide-wrap');
+			var slideWidth = $('.slide-item').outerWidth();
+			var newLeftPos = slideWrap.position().left - slideWidth;
+			var newRightPos = slideWrap.position().left + slideWidth;
+
+
+			function autoplay(){
+				slideWrap.animate({left: newLeftPos},3000, function(){
+					slideWrap
+					.find('.slide-item:first')
+					.appendTo(slideWrap)
+					.parent()
+					.css({'left': -830});
+				});
+			}
+
+			timer = setInterval(autoplay,5000);
+
+			/*----- Остановка слайдера при наведении на стрелки (prev/next) -----*/
+
+			playLink.mouseover(function(){
+				clearInterval(timer);
+			});
+
+			playLink.mouseout(function(){
+				timer = setInterval(autoplay,5000);
+			});
+
+			/*----- Управление слайдером со стрелок (prev/next) -----*/
+
+			playLeft.on('click', function() {
+				autoplay();
+			});
+
+			playRight.on('click', function(){
+				slideWrap.animate({left: newRightPos}, 3000, function(){
+					slideWrap
+					.find('.slide-item:last')
+					.prependTo(slideWrap)
+					.parent()
+					.css({'left': -830});
+				});
+			});
+		});
+
+	</script>
+</body>
+</html>

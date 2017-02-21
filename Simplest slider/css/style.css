@@ -1,0 +1,79 @@
+@import url(normalize.css);
+
+
+.slider {
+	max-width: 830px;
+	margin: 50px auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.slide-list {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.slide-wrap {
+	position: relative;
+	left: -830px;
+	top: 0;
+	width: 10000000px;
+	overflow: hidden;
+	/*outline: 10px solid red;*/
+}
+
+/*.slide-item:first-of-type{
+	border: 10px solid red;
+}
+*/
+
+.slide-item {
+	max-height: 300px;
+	float: left;
+}
+
+#content .photo {
+	min-width: 100%;
+	height: auto;
+}
+
+.hide {
+	display: none !important;
+}
+
+.innerText {
+	width: 830px;
+	height: 380px;
+	padding: 0 30px 0 0;
+}
+
+.innerText p {
+	padding: 0;
+	margin: 0;	
+}
+
+.arr a {
+	width: 50px;
+	height: 50px;
+	font-size: 40px;
+	color: white;
+	position: absolute;
+	top: 50%;
+	background-color: red;
+	z-index: 2;
+	text-decoration: none;
+	text-align: center;
+	margin-top: -25px;
+	line-height: 50px;
+}
+
+.arrRight a {
+	right: 0px;
+}
+
+.arrLeft a {
+	left: 0px;
+
+}
