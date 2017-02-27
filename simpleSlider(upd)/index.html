@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Template</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="slider">
+		<a href="#" class="arrLeft"><</a>
+		<ul>
+			<li><img src="images/img1.png"></li>
+			<li><img src="images/img2.png"></li>
+			<li><img src="images/img3.png"></li>
+		</ul>  
+		<a href="#" class="arrRight">></a>
+	</div>
+
+
+	<script>
+
+		$(document).ready(function () {
+
+			var slWidth = $('#slider ul li').width();
+			var slHeight = $('#slider ul li').height();
+			var sliderLength = $('#slider ul li').length;
+			var totalLegth = slWidth*slHeight;
+
+
+			$('#slider').css({ width: slWidth, height: slHeight });
+			$('#slider ul').css({ width: totalLegth, marginLeft: - slWidth });
+			$('#slider ul li:last-child').prependTo('#slider ul');
+
+
+// Смена слайдов по клику на стрелки
+
+
+			$('.arrLeft').click(function () {
+				$('#slider ul').animate({
+					left: + slWidth }, 300, function () {
+						$('#slider ul li:last-child').prependTo('#slider ul');
+						$('#slider ul').css('left', '');
+					});
+			});
+
+			$('.arrRight').click(function () {
+				$('#slider ul').animate({
+					left: - slWidth }, 300, function () {
+						$('#slider ul li:first-child').appendTo('#slider ul');
+						$('#slider ul').css('left', '');
+					});
+			});
+
+// Запуск движения слайдера
+
+			setInterval(function () {
+				$('#slider ul').animate({
+					left: - slWidth }, 300, function () {
+						$('#slider ul li:first-child').appendTo('#slider ul');
+						$('#slider ul').css('left', '');
+					});
+			}, 3000);
+		});    
+
+	</script>
+</body>
+</html>

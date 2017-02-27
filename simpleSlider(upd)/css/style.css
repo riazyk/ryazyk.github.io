@@ -1,0 +1,46 @@
+@import url(normalize.css);
+
+
+#slider {
+  overflow: hidden;
+  margin: 50px auto 0 auto;
+  position: relative;
+}
+
+#slider ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#slider ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 300px;
+  text-align: center;
+}
+
+.arrRight, .arrLeft {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  background: red;
+  color: #fff;
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.arrRight {
+  right: 0;
+
+}
+
