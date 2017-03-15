@@ -1,0 +1,691 @@
+/*==========  Desktop First Method  ==========*/
+
+@media only screen and (max-width : 1366px) {
+	aside {
+		position: absolute;
+		z-index: 20;
+		left: -500px;
+		top: 118px;
+		bottom: 0;
+		-webkit-transition: all 0.5s;
+		-o-transition: all 0.5s;
+		transition: all 0.5s;
+	}
+
+	.transition {
+		left: 0 !important;
+		-webkit-transition: all 0.5s;
+		-o-transition: all 0.5s;
+		transition: all 0.5s;
+	}
+
+	.content-block {
+		display: none;
+	}
+
+	body .main-wrapper {
+		max-width: 1362px !important;
+		margin: 0 auto;
+	}
+
+	header .hamburger {
+		display: inline-block;
+	}
+
+	.content .wrapper{
+		min-height: auto;
+	}
+
+	.main-wrapper header .content {
+		margin-left: 230px;
+	}
+
+	.content table th:first-child {
+		width: 76px;
+	}
+
+	.content table th:nth-child(3) {
+		width: 235px;
+	}
+
+	.content table th:nth-child(4) {
+		width: 230px;
+	}
+
+	.content table th:nth-child(5) {
+		width: 185px;
+	}
+
+	.content table th:nth-child(6) {
+		width: 170px;
+	}
+
+	.content table th:nth-child(7) {
+		width: 0px;
+	}
+}
+
+
+@media only screen and (max-width : 1292px) {
+	.main-wrapper header .content {
+		margin-left: 30px;
+	}
+}
+
+@media only screen and (max-width : 1176px) {
+	.table-wrap .row4 .cell {
+		padding-left: 10px;
+	}
+
+	.table-wrap .row5 .cell{
+		padding-left: 10px;
+	}
+
+	.table-wrap .row3 .cell{
+		padding-left: 10px;
+	}
+
+	.table-wrap .row6 .cell{
+		padding-left: 10px;
+	}
+
+	.table-wrap .row7 .cell{
+		padding-left: 10px;
+	}
+
+}
+
+@media only screen and (max-width : 1088px) {
+	.main-wrapper header .content {
+		margin-left: 30px;
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width : 969px) {
+	footer {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	footer nav {
+		display: none;
+	}
+
+	footer .wrapper.cf {
+		margin: 0;
+	}
+}
+
+@media only screen and (max-width : 896px) {
+	.table-wrap .row2 {
+		display: none;	
+	}
+}
+
+@media only screen and (max-width : 846px) {
+	.main-header .menu  {
+		margin-top: -2px;
+	}
+
+	.main-header .menu a {
+		margin: 0 20px;
+		margin-top: -2px;
+	}
+
+	.links a {
+		margin-left: 2px !important;
+	}
+
+
+
+	/* Small Devices, Tablets */
+	@media only screen and (max-width : 769px) {
+		body .main-wrapper {
+			max-width: 768px !important;
+			margin: 0 auto;
+		}
+
+		.main-wrapper header .content {
+			display: none;
+		}
+
+		.main-wrapper .grand-wrapper {
+			margin: 0 5% 0 4%;
+		}
+
+		header .hamburger {
+			margin-right: 4.2%;
+		}
+		.content h4 {
+			float: none;
+			padding-bottom: 27px;
+		}
+
+		main .menu {
+			float: none;
+		}
+
+		.main-header .menu a {
+			margin-left: 0;
+			margin-right: 56px;
+		}
+
+		.content .wrapper {
+			margin: 0 4.8%;
+		}
+
+		.content .warning {
+			margin-top: 32px;
+			margin-bottom: 25px;
+			height: 60px;
+		}
+
+		.content .warning p {
+			text-align: left;
+			margin-right: 20px;
+			padding-left: 70px;
+			position: relative;
+		}
+
+		.warning p:before {
+			position: absolute;
+			top: 20%;
+			left: 0;
+		}
+
+		main input[type = "button"] {
+			margin-left: 10px;
+		}
+
+		.row2, .row4 {
+			display: none;
+		}
+
+		.cell li:nth-child(3), .cell li:nth-child(4), .cell li:nth-child(5) {
+			display: none;
+		}
+
+		.row8 .cell {
+			padding-top: 10px;
+		}
+
+		.row8 .cell:first-child {
+			padding-top: 20px;
+			padding-right: 20px;
+		}
+
+		.table .rows .cell {
+			padding-left: 20px;
+		}
+
+		.cell .links .link1, .cell .links .link2 {
+			width: 44px;
+			height: 44px;
+			border-radius: 50%;
+			display: block;
+			background-position: 50% 50%;
+		}
+
+		.cell .links .link1 {
+			background-color: #00746B;
+			background-image: url(../img/lInk1_white.png);
+			margin: 0;
+			padding: 0;
+			margin-right: 7px;
+		}
+
+		.cell .links .link2  {
+			background-color: #769BFA;
+			background-image: url(../img/lInk2_white.png);
+			margin: 0;
+			padding: 0;
+		}
+
+		table .links {
+			margin: 0;
+			padding: 0;
+		}
+
+		.content table th:first-child {
+			width: 75px;
+		}
+
+		.content table th:nth-child(3) {
+			width: 155px;
+		}
+
+		.content table th:nth-child(5) {
+			width: 115px;
+		}
+
+		.content table th:nth-child(6) {
+			width: 120px;
+		}
+
+		.content table th:nth-child(7) {
+			width: 0px;
+		}
+
+		.social {
+			position: absolute;
+			right: 5%;
+			top:  61%;
+		}
+
+		.content .wrapper-top {
+			margin-bottom: 90px;
+			flex: 0;
+		}
+
+		.column h4 {
+			margin: 0;
+			padding: 0;
+		}
+
+		.row .column {
+			margin-bottom: 45px;
+		}
+
+		.content_add {
+			display: none;
+		}
+
+		.wrapper-bottom .container-fluid {
+			margin-bottom: 0;
+		}
+
+		.content .wrapper {
+			height: auto;
+		}
+	}
+
+	@media only screen and (max-width : 768px) {
+		.social {
+			position: absolute;
+			right: 5%;
+			top:  47.6%;
+		}
+
+		.main-header .menu li {
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+
+
+	@media only screen and (max-width : 692px) {
+		.table .rows .cell {
+			padding-left: 5px;
+		}
+
+		.table-wrap .cell{
+			font-size: 14px;
+		}
+
+		.rows .links {
+			padding-right: 0;
+		}
+
+		.cell .links .link1 {
+			margin-right: 2px;
+		}
+	}
+
+	@media only screen and (max-width : 506px) {
+		.content .warning p {
+			margin-right: 0;
+			font-size: 16px;
+
+		}
+	}
+
+
+	/* Extra Small Devices, Phones */
+	@media only screen and (max-width : 480px) {
+		body .main-wrapper {
+			max-width: 480px !important;
+			margin: 0 auto;
+		}
+
+		body footer {
+			margin-top: 0;
+		}
+
+		.transition {
+			width: 100%;
+		}
+
+		.content-wrapper .cut, 
+		.content-wrapper .form,
+		.content-wrapper .line,
+		.content-wrapper h3,
+		.content-block,
+		.btn,
+		.content-wrapper hr {
+			display: none;
+		}
+
+		body .grand-wrapper {
+			margin: 0 5.6%;
+		}
+
+		.table .rows .cell {
+			padding-left: 20px;
+		}
+
+		.table-wrap .cell{
+			font-size: 18px;
+		}
+
+		.rows .links {
+			padding-right: 13px;
+		}
+
+		.cell .links .link1 {
+			margin-right: 7px;
+		}
+
+		.wrapper-bottom {
+			margin-top: 42px;
+		}
+
+		.main-header .menu a {
+			font-size: 16px;
+		}
+
+		.main-header .menu a:after {
+			margin-left: 5px;
+			top: 3px;
+		}
+
+		.content .warning p {
+			font-size: 16px;
+		}
+
+		.ok {
+			display: none;
+		}
+
+		.warning .closed {
+			display: block !important;
+			margin-right: 15px;
+			padding: 12px;
+			border: 1px solid lightgrey;
+			border-radius: 50%;
+		}
+
+		.social {
+			top: 38.8%;
+			z-index: 10;
+		}
+
+		.content .wrapper-top {
+			margin-bottom: 0; 
+		}
+
+		header .hamburger {
+			margin-right: 7.2%;
+		}
+
+		.wrapper-top .rank p {
+			margin-bottom: 0;
+		}
+
+
+		/* ===== Table ===== */
+
+		.table {
+			margin-top: 0;
+		}
+
+		.table .table-wrap {
+
+			display: block;
+		} 
+
+		.hideScrollBar {
+			background-color: #FFF;
+			width: 100%;
+			height: 20px;
+			margin-top: -30px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.table .row1, .table .row2, .table .row4 {
+			display: none;
+		}
+		.rows {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			margin: 0;
+			padding: 0;
+			height: 40px;
+		}
+
+		.table .cell {
+			width: 200px;
+			border-bottom: 1px solid grey;
+			margin: 0;
+			padding: 0;
+			height: 55px;
+			border-bottom: none;
+			text-align: left;
+			text-align: center;
+		}
+
+		.table .row3 .cell:first-child,
+		.table .row5 .cell:first-child,
+		.table .row6 .cell:first-child,
+		.table .row7 .cell:first-child,	
+		.table .row8 .cell:first-child {
+			text-align: left;
+			width: 150px;
+		}
+
+		.table .row8 .cell {
+			height: 135px;
+		}
+
+		.table .row8 .cell:first-child {
+			height: 135px;
+			padding-top: 95px;
+		}
+
+		.table .rows .cell {
+			padding: 0px;
+			padding-top: 21px;
+			width: 144px;
+			border-bottom: 1px solid #E8E8E8;
+		}
+
+/*			.scroll-holst {
+				max-width: 440px;
+				overflow: hidden;
+				outline: 1px solid red;
+				}*/
+
+				.table,
+				.scroll {
+					overflow-x: scroll;
+					overflow-y: hidden;
+				}
+
+				.scroll {
+					height: 20px;
+					margin-bottom: 15px;
+					padding: 0 10px;
+					width: 440px;
+				}
+
+				.table {
+					height: 318px;
+					width: 440px;
+				}
+
+				.scroll-wrap {
+					min-width: 1080px;
+					height: 20px;
+				}
+
+				.table .table-wrap {
+					min-width: 1080px;
+				}
+
+				.cell .links {
+					padding: 0;
+				}
+
+				.cell .links li {
+					padding-left: 35px;
+				}
+
+				.cell .links li:first-child, .cell .links li:nth-child(2){
+					display: block;
+					text-align: center;
+					margin-bottom: 12px;
+				}
+			}
+
+			@media only screen and (max-width : 450px) {
+				.social {
+					top: 39.7%;
+				}
+			}
+
+			@media only screen and (max-width : 440px) {
+				.social {
+					z-index: 10;
+				}
+				.table,
+				.scroll {
+					width: 400px;
+				}
+			}
+
+			@media only screen and (max-width : 401px) {
+				.table,
+				.scroll {
+					width: 380px;
+				}
+
+				.main-header .warning p:before {
+					display: none;
+				}
+
+				.content .warning p {
+					font-size: 14px;
+					padding-left: 20px;
+				}
+			}
+
+			@media only screen and (max-width : 380px) {
+				.table,
+				.scroll {
+					width: 360px;
+				}
+			}
+
+			@media only screen and (max-width : 360px) {
+				.table,
+				.scroll {
+					width: 340px;
+				}
+			}
+
+			@media only screen and (max-width : 340px) {
+				.table,
+				.scroll {
+					width: 320px;
+				}
+			}
+
+
+			/* Custom, iPhone Retina */
+			@media only screen and (max-width : 320px) {
+				body .main-wrapper {
+					width: 320px !important;
+					margin: 0 auto;
+				}
+
+				.table,
+				.scroll {
+					width: 300px;
+				}
+
+				.table .rows .cell {
+					width: 70px;
+				}
+
+				.cell .links li {
+					padding-left: 12px;
+				}
+
+				.social {
+					top: 40.1%;
+				}
+
+				.wrapper .hamburger {
+					float: right;
+					margin-right: 22px;
+				}
+
+				header img {
+					padding-left: 22px !important;
+				}
+
+				.content h4 {
+					font-size: 16px;
+					font-weight: bold;
+				}
+
+				.content .main-header h4:after {
+					content:"BOOKMAKERS";
+					display: inline-block;
+					padding-left: 7px;
+				}
+
+				.content .warning {
+					width: 295px;
+					height: 70px;
+					margin-top: 20px;
+				}
+
+				.rank p, .rank p span {
+					font-size: 14px !important;
+					display: block;
+				} 
+
+				.column h4, .column span {
+					font-size: 14px !important;
+				}
+
+				.row .column {
+					margin-bottom: 30px;
+				}
+
+				.wrapper .header_icon {
+					display: none;
+				}
+
+				.transition {
+					width: 320px;
+
+				}
+
+
+
+
+
+
+			}
+
